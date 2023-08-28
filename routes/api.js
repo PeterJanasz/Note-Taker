@@ -42,4 +42,28 @@ router.post('/notes', (req, res) => {
     }
 });
 
+// DELETE Route for a specific note
+router.delete('/notes/:id', (req, res) => {
+    const { id } = req.params;
+
+    fs.readFile("./db/db.json", "utf8", (error, data) =>
+    error ? console.error(error) : (notes = JSON.parse(data))
+    );
+
+    const deletedNote = notes.filter(note => note.id === req.params.id)
+
+    if(deletedNote) {
+        let filteredNotes = notes.filter(note => note.id != req.params.id)
+        let notesString = JSON.stringify(filteredNotes, null, 3);
+        fs.writeFile(`./db/db.json`, notesString, (err) =>
+        err
+        ? console.error(err)
+        : console.log(`Note deleted!`));
+
+        res.status(200).json(filteredNotes);
+    } else {
+        res.status(500).json('Error deleting note');
+    }
+});
+
 module.exports = router;
