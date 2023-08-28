@@ -23,7 +23,7 @@ router.post('/notes', (req, res) => {
         // push new note into array 
         notes.push(newNote);
         //convert to string
-        let notesString = JSON.stringify(notes);
+        let notesString = JSON.stringify(notes, null, 3);
 
         fs.writeFile(`./db/db.json`, notesString, (err) =>
         err
