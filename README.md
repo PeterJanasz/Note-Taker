@@ -28,6 +28,8 @@ node server.js
 ```
 Once the local host link appears in the terminal, press command and click on the link to open in localhost:3001.
 
+https://desolate-waters-39093-3c9b8d4cd640.herokuapp.com/
+
 ## [Screenshot](#table-of-contents)
 ![Screenshot of App](./public/assets/Screenshot%202023-08-30%20at%208.36.19%20AM.png)
 ![Screenshot of App](public/assets/Screenshot%202023-08-30%20at%208.42.25%20AM.png)
