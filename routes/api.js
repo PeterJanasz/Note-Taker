@@ -11,7 +11,7 @@ router.get('/notes', (req, res) => {
 });
 // POST Route for submitting notes
 router.post('/notes', (req, res) => {
-    const {title, text} = req.body;
+    const { title, text } = req.body;
     // If all the required properties are present
     if (title && text) {
         // Variable for the object we will save
@@ -26,9 +26,9 @@ router.post('/notes', (req, res) => {
         let notesString = JSON.stringify(notes, null, 3);
 
         fs.writeFile(`./db/db.json`, notesString, (err) =>
-        err
-            ? console.error(err)
-            : console.log(`New note has been added!`) 
+            err
+                ? console.error(err)
+                : console.log(`New note has been added!`)
         );
         const response = {
             status: 'success',
@@ -47,18 +47,18 @@ router.delete('/notes/:id', (req, res) => {
     const { id } = req.params;
 
     fs.readFile("./db/db.json", "utf8", (error, data) =>
-    error ? console.error(error) : (notes = JSON.parse(data))
+        error ? console.error(error) : (notes = JSON.parse(data))
     );
 
     const deletedNote = notes.filter(note => note.id === req.params.id)
 
-    if(deletedNote) {
+    if (deletedNote) {
         let filteredNotes = notes.filter(note => note.id != req.params.id)
         let notesString = JSON.stringify(filteredNotes, null, 3);
         fs.writeFile(`./db/db.json`, notesString, (err) =>
-        err
-        ? console.error(err)
-        : console.log(`Note deleted!`));
+            err
+                ? console.error(err)
+                : console.log(`Note deleted!`));
 
         res.status(200).json(filteredNotes);
     } else {

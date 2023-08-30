@@ -1,1 +1,17 @@
-[]
+[
+   {
+      "title": "Assignments",
+      "text": "Complete Module 11 Challange",
+      "id": "82fe6396-2d2f-40e3-8a87-5060f2645ce9"
+   },
+   {
+      "title": "Shopping list ",
+      "text": "Chicken\nBell Peppers\nOnion\nRice\nSeasoning\nEggs",
+      "id": "729a5da1-b5c5-4a82-b6fc-1568941c16ec"
+   },
+   {
+      "title": "Express.js",
+      "text": "HTML Routes\nQuery Parameters\nGET-Fetch\nStatic-Assets\nInsomnia\nPOST-Request\nBody-Parsing\nPOST-Fetch\nData-Persistance\nModular-Routing\nCustom-Middleware",
+      "id": "07e1e5bd-dda7-4891-9ab3-2b0b773ee05d"
+   }
+]
